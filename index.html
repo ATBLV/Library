@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Project</title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <!-- <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&family=Skranji&family=Tapestry&display=swap"
+    rel="stylesheet"> -->
+
+  <style>
+    @font-face {
+      font-family: Roboto;
+      src: url(fonts/Roboto/Roboto-Regular.ttf);
+    }
+
+    body {
+      font-family: Roboto;
+      /* background-color: blue; */
+    }
+
+    .container {
+      /* margin-left: 10%; */
+      /* margin-right: 10%; */
+      /* justify-content: center; */
+
+    }
+
+    .header {
+      width: 100%;
+      position: ;
+      /* background-color: aqua; */
+    }
+
+    .input_fields {
+      margin-top: 10%;
+      margin-bottom: 2%;
+    }
+
+    input {
+      /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
+    }
+
+    button {
+      /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    }
+
+    .table {
+      /* margin-left: 18%; */
+      /* width: 65% */
+      table-layout: fixed;
+
+    }
+
+    thead {}
+
+    thead tr th:nth-child(1) {
+      width: 2%;
+    }
+
+    thead tr th:nth-child(2) {
+      width: 35%;
+    }
+
+    thead tr th:nth-child(3) {
+      width: 35%;
+    }
+
+    thead tr th:nth-child(4) {
+      width: 5%;
+    }
+
+    thead tr th:nth-child(5) {
+      width: 5%;
+    }
+
+    thead tr th:nth-child(6) {
+      width: 5%;
+    }
+
+    tbody tr th:nth-child(1) {
+      width: 2%;
+    }
+
+    tbody tr td:nth-child(2) {
+      width: 35%;
+    }
+
+    tbody tr td:nth-child(3) {
+      width: 35%;
+    }
+
+    tbody tr td:nth-child(4) {
+      width: 5%;
+      text-align: center;
+    }
+
+    tbody tr td:nth-child(5) {
+      width: 5%;
+      text-align: center;
+    }
+
+    tbody tr td:nth-child(6) {
+      width: 5%;
+    }
+
+
+    td {
+      /* width: 20%; */
+    }
+
+    table {
+      border: none;
+    }
+
+    .generated_buttons {
+      background-color: red;
+      width: 60px;
+      font-size: 10px;
+    }
+
+    .created{
+      display: flex;
+      font-size: 10px;
+      text-align: center;
+      justify-content: end;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="input_fields">
+        <h2>Library</h2>
+        <form id="form_input" onsubmit="return validateForm()">     
+          <!-- validateForm() for preventing browser reset as is typical function for form submission -->
+          <fieldset>
+          <div class="row">
+            <div class="col-4">
+              <label for="book_input">Book</label>
+              <input id="book_input" type="text" class="form-control" placeholder="Book" autofocus required>
+            </div>
+            <div class="col-4">
+              <label for="author_input">Author</label>
+              <input id="author_input" type="text" class="form-control" placeholder="Author" required>
+            </div>
+            <div class="col">
+              <label for="pages_input">Pages</label>
+              <input id="pages_input" type="text" class="form-control" placeholder="Pages" required>
+            </div>
+            <div class="col custom-control custom-checkbox" style="justify-items: center;">
+              <input id="read_input" type="checkbox" class="custom-control-input" id="customCheck1"
+                style="margin-top: 30%;">
+              <label class="custom-control-label" for="read_input">Book Read?</label>
+            </div>
+
+            <div class="col">
+              <label for="submit"></label>
+              <button id="submit_button" type="submit" class="btn btn-primary mb-2 form-control" style="" onsubmit="preventDefault()">New
+                Book</button>
+            </div>
+          </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <!-- Table -->
+
+    <div>
+      <table class="table table-hover" style="">
+        <colgroup>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col" class="">#</th>
+            <th scope="col" class="">Book</th>
+            <th scope="col" class="">Author</th>
+            <th scope="col" class="">Pages</th>
+            <th scope="col" class="">Status</th>
+            <th scope="col" class=""></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div id="created_table">
+
+    </div>
+
+
+
+
+
+  </div>
+  <!-- <div class="created">
+    created by ATBLV for The Odin Project
+  </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/Library.js"></script>
+</body>
+
+</html>
