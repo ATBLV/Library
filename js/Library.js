@@ -39,8 +39,6 @@ function generateTable() {
     for (let i = 0; i < myLibrary.length; i++) {
         const row = document.createElement("tr");
         let cell = document.createElement("th");
-        // cell.style = "width: 10%;";
-        // cell.className = 'th_col_1';
         cellText = document.createTextNode(i + 1);
         cell.appendChild(cellText);
         row.appendChild(cell);
@@ -62,12 +60,13 @@ function generateTable() {
     tbl.appendChild(tblBody);
     // appends <table> into <body>
     document.getElementById("created_table").replaceChildren(tbl);
+    deleteEvent();
 }
 
 function generateButton() {
     let button = document.createElement('button');
+    button.innerHTML = "<img src='img/delete_black_24dp.svg'>";
     button.type = 'button';
-    button.innerHTML = 'Delete';
     button.className = 'btn generated_buttons';
 
     return button;
@@ -97,10 +96,15 @@ function validateForm() {
 
 // To delete books in the Library array
 
-addEventListener('click', (event) => {
-    let index = event.target.closest('tr').firstChild.innerHTML;
-    console.log("CLICK TARGET: ",index);
-    myLibrary.splice(index - 1, 1);
-    generateTable();
-
-});
+function deleteEvent() {
+    let buttons = document.getElementsByTagName('button');
+    console.log("BUTTONS: ", buttons);
+    for (let i = 1; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', (event) => {
+            let index = event.target.closest('tr').firstChild.innerHTML;
+            console.log("CLICK TARGET: ", index);
+            myLibrary.splice(index - 1, 1);
+            generateTable();
+        });
+    }
+}

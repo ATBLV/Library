@@ -28,6 +28,9 @@
       /* background-color: blue; */
     }
 
+    .title{
+      margin-bottom: 1.2rem;
+    }
     .container {
       /* margin-left: 10%; */
       /* margin-right: 10%; */
@@ -117,6 +120,11 @@
 
     td {
       /* width: 20%; */
+      vertical-align: middle;
+    }
+
+    th {
+      vertical-align: middle;
     }
 
     table {
@@ -124,16 +132,47 @@
     }
 
     .generated_buttons {
-      background-color: red;
-      width: 60px;
+      background-color: transparent;
+      border-color: transparent;
+      width: 50px;
       font-size: 10px;
     }
 
-    .created{
-      display: flex;
-      font-size: 10px;
+    .generated_buttons:hover {
+      border-color: transparent;
+    }
+
+    .footer {
+      /* position: absolute; */
+      /* bottom: 0; */
+      /* align-items: center; */
+      /* align-self: center; */
+      /* justify-content: center; */
+
+      /* display: block; */
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      /* width: 50%; */
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-bottom: 10px;
+      /* height: 10px; */
       text-align: center;
-      justify-content: end;
+      font-size: 0.6rem;
+      
+      /* Height of the footer */
+    }
+
+    footer img {
+      max-width: 28px;
+      height: auto;
+      margin-bottom: 0;
+      text-align: center;
+      vertical-align: middle;
     }
   </style>
 
@@ -144,35 +183,36 @@
 
     <div class="header">
       <div class="input_fields">
-        <h2>Library</h2>
-        <form id="form_input" onsubmit="return validateForm()">     
+        <h2 class="title">Library</h2>
+        <form id="form_input" onsubmit="return validateForm()">
           <!-- validateForm() for preventing browser reset as is typical function for form submission -->
           <fieldset>
-          <div class="row">
-            <div class="col-4">
-              <label for="book_input">Book</label>
-              <input id="book_input" type="text" class="form-control" placeholder="Book" autofocus required>
-            </div>
-            <div class="col-4">
-              <label for="author_input">Author</label>
-              <input id="author_input" type="text" class="form-control" placeholder="Author" required>
-            </div>
-            <div class="col">
-              <label for="pages_input">Pages</label>
-              <input id="pages_input" type="text" class="form-control" placeholder="Pages" required>
-            </div>
-            <div class="col custom-control custom-checkbox" style="justify-items: center;">
-              <input id="read_input" type="checkbox" class="custom-control-input" id="customCheck1"
-                style="margin-top: 30%;">
-              <label class="custom-control-label" for="read_input">Book Read?</label>
-            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="book_input">Book</label>
+                <input id="book_input" type="text" class="form-control" placeholder="Book" autofocus required>
+              </div>
+              <div class="col-4">
+                <label for="author_input">Author</label>
+                <input id="author_input" type="text" class="form-control" placeholder="Author" required>
+              </div>
+              <div class="col">
+                <label for="pages_input">Pages</label>
+                <input id="pages_input" type="text" class="form-control" placeholder="Pages" required>
+              </div>
+              <div class="col custom-control custom-checkbox" style="justify-items: center;">
+                <input id="read_input" type="checkbox" class="custom-control-input" id="customCheck1"
+                  style="margin-top: 30%;">
+                <label class="custom-control-label" for="read_input">Book Read?</label>
+              </div>
 
-            <div class="col">
-              <label for="submit"></label>
-              <button id="submit_button" type="submit" class="btn btn-primary mb-2 form-control" style="" onsubmit="preventDefault()">New
-                Book</button>
+              <div class="col">
+                <label for="submit"></label>
+                <button id="submit_button" type="submit" class="btn btn-primary mb-2 form-control" style=""
+                  onsubmit="preventDefault()">New
+                  Book</button>
+              </div>
             </div>
-          </div>
           </fieldset>
         </form>
       </div>
@@ -202,13 +242,14 @@
     </div>
 
 
-
-
-
   </div>
-  <!-- <div class="created">
-    created by ATBLV for The Odin Project
-  </div> -->
+
+  <footer class="">
+    <a href="https://github.com/ATBLV/Library" target=”_blank”><img style="" class="" src="img/GitHub-Mark/PNG/GitHub-Mark-32px.png" alt="Github">
+    </a>
+    Created by ATBLV for The Odin Project
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
