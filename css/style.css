@@ -1,0 +1,157 @@
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+}
+
+body {
+    font-family: Roboto;
+    background-color: #edf2f4;
+}
+
+.title {
+    display: flex;
+    margin-bottom: 0.6rem;
+}
+
+
+.title h2 {
+    /* color: #8d99ae; */
+    color: #2b2d42;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    font-size: 2.3rem;
+    /* color: #ef233c; */
+    filter: drop-shadow(0.09rem 0.09rem 0.09rem rgba(0, 0, 0, 0.5));
+}
+
+.filter-svg {
+    filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%);
+    filter: drop-shadow(0.09rem 0.09rem 0.09rem rgba(0, 0, 0, 0.5));
+}
+
+.container {}
+
+.header {
+    width: 100%;
+    position: ;
+}
+
+.input_fields {
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+input {}
+
+button {
+    --bs-btn-color: #ef233c;
+}
+
+.button_color {
+    --bs-btn-bg: #ef233c;
+    border-color: #ef233c;
+    filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
+}
+
+.table {
+    table-layout: fixed;
+}
+
+thead {}
+
+thead tr th:nth-child(1) {
+    width: 2%;
+}
+
+thead tr th:nth-child(2) {
+    width: 35%;
+}
+
+thead tr th:nth-child(3) {
+    width: 35%;
+}
+
+thead tr th:nth-child(4) {
+    width: 5%;
+}
+
+thead tr th:nth-child(5) {
+    width: 5%;
+}
+
+thead tr th:nth-child(6) {
+    width: 5%;
+}
+
+tbody tr th:nth-child(1) {
+    width: 2%;
+}
+
+tbody tr td:nth-child(2) {
+    width: 35%;
+}
+
+tbody tr td:nth-child(3) {
+    width: 35%;
+}
+
+tbody tr td:nth-child(4) {
+    width: 5%;
+    text-align: center;
+}
+
+tbody tr td:nth-child(5) {
+    width: 5%;
+    text-align: center;
+}
+
+tbody tr td:nth-child(6) {
+    width: 5%;
+}
+
+td {
+    vertical-align: middle;
+}
+
+th {
+    vertical-align: middle;
+}
+
+table {
+    border: none;
+}
+
+.generated_buttons {
+    background-color: transparent;
+    border-color: transparent;
+    width: 50px;
+    font-size: 10px;
+}
+
+.generated_buttons:hover {
+    border-color: transparent;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+footer img {
+    max-width: 28px;
+    height: auto;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td img {
+    /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
+    filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%);
+    filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
+
+}
