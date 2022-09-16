@@ -1,7 +1,7 @@
 console.log("TITLE: Project:- Library ");
 
 let myLibrary = [
-    { 'title': 'Book 1', 'author': 'Author 1', 'pages': '123', 'status': 'true' },
+    { 'title': 'Dune', 'author': 'Frank Herbert', 'pages': '412', 'status': 'true' },
     { 'title': 'Book 2', 'author': 'Author 2', 'pages': '231', 'status': 'true' },
     { 'title': 'Book 3', 'author': 'Author 3', 'pages': '312', 'status': 'true' },
 ];

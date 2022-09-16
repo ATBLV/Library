@@ -25,23 +25,37 @@
 
     body {
       font-family: Roboto;
-      /* background-color: blue; */
+      background-color: #edf2f4;
     }
 
-    .title{
-      margin-bottom: 1.2rem;
+    .title {
+      display: flex;
+      margin-bottom: 0.6rem;
     }
-    .container {
-      /* margin-left: 10%; */
-      /* margin-right: 10%; */
-      /* justify-content: center; */
+
+
+    .title h2 {
+      /* color: #8d99ae; */
+      color: #2b2d42;
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+      font-size: 2.3rem;
+      /* color: #ef233c; */
+      filter: drop-shadow(0.09rem 0.09rem 0.09rem rgba(0, 0, 0, 0.5));
+
 
     }
+
+    .filter-svg {
+      filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%);
+      filter: drop-shadow(0.09rem 0.09rem 0.09rem rgba(0, 0, 0, 0.5));
+    }
+
+    .container {}
 
     .header {
       width: 100%;
       position: ;
-      /* background-color: aqua; */
     }
 
     .input_fields {
@@ -49,20 +63,20 @@
       margin-bottom: 2%;
     }
 
-    input {
-      /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-
-    }
+    input {}
 
     button {
-      /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+      --bs-btn-color: #ef233c;
+    }
+
+    .button_color {
+      --bs-btn-bg: #ef233c;
+      border-color: #ef233c;
+      filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
     }
 
     .table {
-      /* margin-left: 18%; */
-      /* width: 65% */
       table-layout: fixed;
-
     }
 
     thead {}
@@ -117,9 +131,7 @@
       width: 5%;
     }
 
-
     td {
-      /* width: 20%; */
       vertical-align: middle;
     }
 
@@ -142,29 +154,13 @@
       border-color: transparent;
     }
 
-    .footer {
-      /* position: absolute; */
-      /* bottom: 0; */
-      /* align-items: center; */
-      /* align-self: center; */
-      /* justify-content: center; */
-
-      /* display: block; */
-      /* margin-left: auto; */
-      /* margin-right: auto; */
-      /* width: 50%; */
-    }
-
     footer {
       position: absolute;
       bottom: 0;
       width: 100%;
       margin-bottom: 10px;
-      /* height: 10px; */
       text-align: center;
       font-size: 0.6rem;
-      
-      /* Height of the footer */
     }
 
     footer img {
@@ -173,6 +169,13 @@
       margin-bottom: 0;
       text-align: center;
       vertical-align: middle;
+    }
+
+    td img {
+      /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
+      filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%);
+      filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
+
     }
   </style>
 
@@ -183,7 +186,10 @@
 
     <div class="header">
       <div class="input_fields">
-        <h2 class="title">Library</h2>
+        <div class="title" style="">
+          <img src="img/auto_stories_black_24dp.svg" class="filter-svg" width="40rem" alt="">
+          <h2 class="">Library</h2>
+        </div>
         <form id="form_input" onsubmit="return validateForm()">
           <!-- validateForm() for preventing browser reset as is typical function for form submission -->
           <fieldset>
@@ -208,7 +214,7 @@
 
               <div class="col">
                 <label for="submit"></label>
-                <button id="submit_button" type="submit" class="btn btn-primary mb-2 form-control" style=""
+                <button id="submit_button" type="submit" class="btn btn-primary mb-2 form-control button_color" style=""
                   onsubmit="preventDefault()">New
                   Book</button>
               </div>
@@ -238,14 +244,12 @@
     </div>
 
     <div id="created_table">
-
     </div>
-
-
   </div>
 
   <footer class="">
-    <a href="https://github.com/ATBLV/Library" target=”_blank”><img style="" class="" src="img/GitHub-Mark/PNG/GitHub-Mark-32px.png" alt="Github">
+    <a href="https://github.com/ATBLV/Library" target=”_blank”><img style="" class=""
+        src="img/GitHub-Mark/PNG/GitHub-Mark-32px.png" alt="Github">
     </a>
     Created by ATBLV for The Odin Project
   </footer>
