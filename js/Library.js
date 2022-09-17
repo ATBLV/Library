@@ -2,8 +2,8 @@ console.log("TITLE: Project:- Library ");
 
 let myLibrary = [
     { 'title': 'Dune', 'author': 'Frank Herbert', 'pages': '412', 'status': 'true' },
-    { 'title': 'Book 2', 'author': 'Author 2', 'pages': '231', 'status': 'true' },
-    { 'title': 'Book 3', 'author': 'Author 3', 'pages': '312', 'status': 'true' },
+    { 'title': 'Nineteen Eighty-Four', 'author': 'George Orwell', 'pages': '328', 'status': 'true' },
+    { 'title': 'Pride and Prejudice', 'author': 'Jane Austen', 'pages': '345', 'status': 'true' },
 ];
 
 function Book(title, author, pages, read) {
@@ -21,7 +21,6 @@ function addBookToLibrary() {
     bookInfo.status = document.getElementById('read_input').checked;
 
     myLibrary.push(bookInfo);
-    console.log("MYLIBRARY: ", myLibrary);
     generateTable();
 
     document.getElementById("form_input").reset();
@@ -88,7 +87,6 @@ function validateForm() {
     let pages = document.getElementById('pages_input').value;
 
     if (title === "" || author === "" || pages === "") {
-        console.log("EMPTY FIELD");
     } else {
         addBookToLibrary();
     }
@@ -98,11 +96,9 @@ function validateForm() {
 
 function deleteEvent() {
     let buttons = document.getElementsByTagName('button');
-    console.log("BUTTONS: ", buttons);
     for (let i = 1; i < buttons.length; i++) {
         buttons[i].addEventListener('click', (event) => {
             let index = event.target.closest('tr').firstChild.innerHTML;
-            console.log("CLICK TARGET: ", index);
             myLibrary.splice(index - 1, 1);
             generateTable();
         });

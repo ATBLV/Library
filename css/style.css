@@ -1,8 +1,15 @@
+/* Colour Pallete: https://coolors.co/palette/2b2d42-8d99ae-edf2f4-ef233c-d80032 */
+/* colour {
+    color: #2b2d42;
+    color: #8d99ae;
+    color: #edf2f4;
+    color: #ef233c;
+    color: #d80032;
+} */
+
 @font-face {
-    /* font-family: Roboto; */
     font-family: 'Roboto', sans-serif;
     src: url('../fonts/Roboto/Roboto-Regular.ttf');
-    src: local('../fonts/Roboto/Roboto-Regular.ttf');
 }
 
 body {
@@ -18,7 +25,6 @@ body {
 
 
 .title h2 {
-    /* color: #8d99ae; */
     color: #2b2d42;
     margin-top: 1rem;
     margin-left: 0.5rem;
@@ -139,9 +145,15 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     text-align: center;
     font-size: 0.6rem;
+    /* background-color: #8d99ae; */
+}
+footer div{
+    height: 2rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 footer img {
