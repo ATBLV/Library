@@ -13,7 +13,6 @@
 }
 
 body {
-    /* font-family: Roboto; */
     font-family: 'Roboto', sans-serif;
     background-color: #edf2f4;
 }
@@ -142,10 +141,10 @@ table {
     border-color: transparent;
 }
 
-/* .delete_button {
+td .delete_button {
     filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
 
-} */
+}
 
 .mark_read_button {
     background-color: transparent;
@@ -177,7 +176,6 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* margin-bottom: 10px; */
     text-align: center;
     font-size: 0.6rem;
     /* background-color: #8d99ae; */
@@ -195,11 +193,4 @@ footer img {
     margin-bottom: 0;
     text-align: center;
     vertical-align: middle;
-}
-
-td img {
-    /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
-    /* filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%); */
-    /* filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5)); */
-
 }
