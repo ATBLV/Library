@@ -86,6 +86,7 @@ thead tr th:nth-child(4) {
 
 thead tr th:nth-child(5) {
     width: 5%;
+    text-align: center;
 }
 
 thead tr th:nth-child(6) {
@@ -130,14 +131,45 @@ table {
     border: none;
 }
 
-.generated_buttons {
+.delete_button {
     background-color: transparent;
     border-color: transparent;
     width: 50px;
     font-size: 10px;
 }
 
-.generated_buttons:hover {
+.delete_button:hover {
+    border-color: transparent;
+}
+
+/* .delete_button {
+    filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
+
+} */
+
+.mark_read_button {
+    background-color: transparent;
+    border-color: transparent;
+    /* filter: invert(62%) sepia(16%) saturate(369%) hue-rotate(179deg) brightness(94%) contrast(88%); */
+    /* filter: invert(13%) sepia(9%) saturate(2313%) hue-rotate(197deg) brightness(105%) contrast(89%); */
+    filter: invert(70%) sepia(66%) saturate(2560%) hue-rotate(46deg) brightness(106%) contrast(101%);
+    width: 60px;
+    font-size: 10px;
+}
+
+.mark_read_button:hover {
+    border-color: transparent;
+}
+
+.mark_unread_button {
+    background-color: transparent;
+    border-color: transparent;
+    filter: invert(16%) sepia(72%) saturate(4825%) hue-rotate(344deg) brightness(109%) contrast(88%);
+    width: 50px;
+    font-size: 10px;
+}
+
+.mark_unread_button:hover {
     border-color: transparent;
 }
 
@@ -150,7 +182,8 @@ footer {
     font-size: 0.6rem;
     /* background-color: #8d99ae; */
 }
-footer div{
+
+footer div {
     height: 2rem;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -166,7 +199,7 @@ footer img {
 
 td img {
     /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
-    filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%);
-    filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5));
+    /* filter: invert(14%) sepia(14%) saturate(1608%) hue-rotate(196deg) brightness(91%) contrast(87%); */
+    /* filter: drop-shadow(0.12rem 0.12rem 0.12rem rgba(0, 0, 0, 0.5)); */
 
 }

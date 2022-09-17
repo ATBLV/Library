@@ -1,9 +1,9 @@
 console.log("TITLE: Project:- Library ");
 
 let myLibrary = [
-    { 'title': 'Dune', 'author': 'Frank Herbert', 'pages': '412', 'status': 'true' },
-    { 'title': 'Nineteen Eighty-Four', 'author': 'George Orwell', 'pages': '328', 'status': 'true' },
-    { 'title': 'Pride and Prejudice', 'author': 'Jane Austen', 'pages': '345', 'status': 'true' },
+    { 'title': 'Dune', 'author': 'Frank Herbert', 'pages': '412', 'status': true },
+    { 'title': 'Nineteen Eighty-Four', 'author': 'George Orwell', 'pages': '328', 'status': true },
+    { 'title': 'Pride and Prejudice', 'author': 'Jane Austen', 'pages': '345', 'status': true },
 ];
 
 function Book(title, author, pages, read) {
@@ -44,13 +44,21 @@ function generateTable() {
 
         for (const [key, value] of Object.entries(myLibrary[i])) {
             cell = document.createElement("td");
-            cellText = document.createTextNode(value);
-            cell.appendChild(cellText);
+            if (value === true) {
+                cell.appendChild(generateButton('read'));
+                row.appendChild(cell);
+            } else if (value === false) {
+                cell.appendChild(generateButton('unread'));
+                row.appendChild(cell);
+            } else {
+                cellText = document.createTextNode(value);
+                cell.appendChild(cellText);
+            }
             row.appendChild(cell);
         }
         // add the row to the end of the table body
         cell = document.createElement('td');
-        cell.appendChild(generateButton());
+        cell.appendChild(generateButton('delete'));
         row.appendChild(cell);
         tblBody.appendChild(row);
 
@@ -59,15 +67,25 @@ function generateTable() {
     tbl.appendChild(tblBody);
     // appends <table> into <body>
     document.getElementById("created_table").replaceChildren(tbl);
-    deleteEvent();
 }
 
-function generateButton() {
-    let button = document.createElement('button');
-    button.innerHTML = "<img src='img/delete_black_24dp.svg'>";
-    button.type = 'button';
-    button.className = 'btn generated_buttons';
+function generateButton(icon) {
+    let readIcon = "<img width='20px' src='img/bookmark-check-fill.svg'>";
+    let unreadIcon = "<img width='20px' src='img/bookmark-x-fill.svg'>";
+    let deleteIcon = "<img src='img/delete_black_24dp.svg'>";
 
+    let button = document.createElement('button');
+    if (icon === 'delete') {
+        button.innerHTML = deleteIcon;
+        button.className = 'btn delete_button';
+    } else if (icon === 'read') {
+        button.innerHTML = readIcon;
+        button.className = 'btn mark_read_button';
+    } else if (icon === 'unread') {
+        button.innerHTML = unreadIcon;
+        button.className = 'btn mark_unread_button';
+    }
+    button.type = 'button';
     return button;
 };
 
@@ -92,15 +110,16 @@ function validateForm() {
     }
 }
 
-// To delete books in the Library array
-
-function deleteEvent() {
-    let buttons = document.getElementsByTagName('button');
-    for (let i = 1; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', (event) => {
-            let index = event.target.closest('tr').firstChild.innerHTML;
+document.addEventListener('click', (event) => {
+    try {
+        let index = event.target.closest('tr').firstChild.innerHTML;
+        if (event.target.closest('button').classList.contains('delete_button')) {
             myLibrary.splice(index - 1, 1);
-            generateTable();
-        });
-    }
-}
+        } else if (event.target.closest('button').classList.contains('mark_read_button')) {
+            myLibrary[index - 1].status = false;
+        } else if (event.target.closest('button').classList.contains('mark_unread_button')) {
+            myLibrary[index - 1].status = true;
+        }
+        generateTable();
+    } catch { }
+});
